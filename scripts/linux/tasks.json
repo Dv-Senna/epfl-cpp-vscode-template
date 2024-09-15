@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "EPFL : Create folders",
+			"command": "mkdir -p build/Debug"
+		},
+		{
+			"type": "shell",
+			"label": "EPFL : configure project",
+			"command": "cmake -DCMAKE_BUILD_TYPE=Debug ${workspaceFolder}",
+			"options": {
+				"cwd": "${workspaceFolder}/build/Debug"
+			},
+			"dependsOn": ["EPFL : Create folders"]
+		},
+		{
+			"type": "shell",
+			"label": "EPFL : build project",
+			"command": "make all -j8",
+			"dependsOn": ["EPFL : configure project"],
+			"options": {
+				"cwd": "${workspaceFolder}/build/Debug"
+			},
+			"group": "build"
+		}
+	]
+}

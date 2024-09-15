@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.20)
+
+project(EPFL
+	VERSION 0.0
+	LANGUAGES CXX
+)
+
+set_property(GLOBAL PROPERTY CXX_STANDARD 11)
+
+file(GLOB_RECURSE SRC_FILES src/*.cpp)
+file(GLOB_RECURSE SRC_FILES_2 src/*.cc)
+file(GLOB_RECURSE HEADER_FILES src/*.hpp)
+file(GLOB_RECURSE HEADER_FILES_2 src/*.h)
+
+add_executable(EPFL ${SRC_FILES} ${SRC_FILES_2} ${HEADER_FILES} ${HEADER_FILES_2})

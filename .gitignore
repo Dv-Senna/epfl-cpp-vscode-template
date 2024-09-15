@@ -30,3 +30,17 @@
 *.exe
 *.out
 *.app
+
+# Build folder
+build/*
+
+# .vscode folder
+.vscode/*
+
+# scripts
+*.sh
+!scripts/*.sh
+!scripts/linux/*.sh
+*.bat
+!scripts/*.bat
+!scripts/windows/*.bat
